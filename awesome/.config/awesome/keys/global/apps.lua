@@ -28,5 +28,13 @@ return gears.table.join(
             description = "run prompt",
             group = "launcher"
         }
+    ),
+    awful.key(
+        { "Mod1" }, "Tab",
+        function() awful.spawn.with_shell(apps.window_switcher) end,
+        {
+            description = "window switcher",
+            group = "launcher"
+        }
     )
 )
