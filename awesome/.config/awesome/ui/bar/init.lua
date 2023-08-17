@@ -13,6 +13,7 @@ local volume = require('awesome-wm-widgets.pactl-widget.volume') {
 local date = wibox.widget.textclock("%d.%m.%Y")
 local clock = wibox.widget.textclock("%H:%M")
 local create_launcher = require("ui.bar.components.launcher")
+local create_powermenu = require("ui.bar.components.powermenu")
 local create_module = require("ui.bar.components.module")
 local create_tasklist = require("ui.bar.components.tasklist")
 local create_shortcuts = require("ui.bar.components.shortcuts")
@@ -58,6 +59,7 @@ awful.screen.connect_for_each_screen(function(s)
                 create_module(volume, " ", colors.yellow),
                 create_module(date, " ", colors.orange),
                 create_module(clock, " ", colors.red),
+                create_powermenu(),
             },
         }
     }

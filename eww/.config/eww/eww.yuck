@@ -1,0 +1,18 @@
+(defwindow powermenu
+    :geometry (geometry :x "0"
+        :y "0"
+        :anchor "center center")
+    :stacking "fg"
+(powermenu))
+
+(defwidget powermenu []
+(box :orientation "horizontal"
+        :class "powermenu-container"
+        :halign "center"
+    (powermenu-button :icon "" :action "systemctl poweroff")
+    (powermenu-button :icon "" :action "systemctl reboot")
+    (powermenu-button :icon "󰍃" :action "awesome-client 'awesome.quit()'")
+    (powermenu-button :icon "" :action "i3lock -c '#2A2A37'")))
+
+(defwidget powermenu-button [icon action]
+(button :class "powermenu-button" :onclick "eww close powermenu && ${action}" "${icon}"))
